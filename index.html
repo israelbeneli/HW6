@@ -19,6 +19,7 @@
                             <h5 class="card-titel">כרוב</h5>
                             <p class="card-text">8</p> 
                             <a class="btn btn-primary" onclick="addKruv()">הוסף לסל</a>
+                            <a class="btn btn-primary" onclick="removeKruv()">הסר מהסל</a>
                         </div>
                     </div>
                     <div class="card w-25">
@@ -27,6 +28,7 @@
                             <h5 class="card-titel">מלפפונים</h5>
                             <p class="card-text">6</p> 
                             <a class="btn btn-primary" onclick="addMel()">הוסף לסל</a>
+                            <a class="btn btn-primary" onclick="removeMel()">הסר מהסל</a>
                         </div>
                     </div>
                     <div class="card w-25">
@@ -35,6 +37,7 @@
                             <h5 class="card-titel">עגבנייה  </h5>
                             <p class="card-text">4</p>
                             <a class="btn btn-primary" onclick="addTom()">הוסף לסל</a>
+                            <a class="btn btn-primary" onclick="removeTom()">הסר מהסל</a>
                         </div>
                     </div>
                     <div class="card w-25">
@@ -42,7 +45,8 @@
                         <div class="card-body">
                             <h5 class="card-titel"> גמבה</h5>
                             <p class="card-text">5</p>
-                            <a class="btn btn-primary" onclick="addGam()">הוסף לסל</a>    
+                            <a class="btn btn-primary" onclick="addGam()">הוסף לסל</a>
+                            <a class="btn btn-primary" onclick="removeGam()">הסר מהסל</a>    
                         </div>
                     </div>
             </div> 
@@ -54,7 +58,6 @@
             <p class="basket" id="finelprice"></p>
     </div>
     <div class="container-fluid p-5 text-center">
-        
         <a class="btn btn-primary" onclick="totalAll()">סה"כ</a>
         <a class="btn btn-primary" onclick="CleanAll()">איפוס</a>
         <p>ישראל בן אלי</p> 

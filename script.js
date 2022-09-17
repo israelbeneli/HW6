@@ -1,22 +1,21 @@
 let total=0;
 let counter=0;
-let counterKruv=1;
-let counterMel=1;
-let counterTom=1;
-let counterGam=1;
+let counterKruv=0;
+let counterMel=0;
+let counterTom=0;
+let counterGam=0;
 
 function addProdact(name,priceUnit,id,counterP,line){
     line=[];
-    if (counterP>1)
+    if (counterP>0)
     {
        line = document.getElementById(id);
        line.remove();
-       line = document.createTextNode(counterP*priceUnit +" "+ name);
+       line = document.createTextNode((counterP+1)*priceUnit +" "+ name);
     } 
     else{
         line = document.createTextNode(name +' '+ priceUnit);
     } 
-    total = total + priceUnit;
     let newPar = document.createElement("ul"); 
     newPar.setAttribute("class","lineInBasket");
     newPar.setAttribute("id",id);
@@ -47,8 +46,36 @@ function addGam(){
     addProdact("גמבה",5,"gamline",counterGam,gamline);
     counterGam++;
 }
-
-
+function removeKruv(){
+    let KruvLine1 = document.getElementById("kruvLine");
+        KruvLine1.remove();
+        counterKruv=0;
+        if(counter>0){
+            removeTotalpriceLine();
+        }
+}
+function removeMel(){
+    let MelLine1 = document.getElementById("melLine");
+        MelLine1.remove();
+        counterMel=0;
+        if(counter>0){
+            removeTotalpriceLine();
+        }
+}function removeTom(){
+    let TomLine1 = document.getElementById("tomline");
+        TomLine1.remove();
+        counterTom=0;
+        if(counter>0){
+            removeTotalpriceLine();
+        }
+}function removeGam(){
+    let GamLine1 = document.getElementById("gamline");
+        GamLine1.remove();
+        counterGam=0;
+        if(counter>0){
+            removeTotalpriceLine();
+        }
+}
 function totalAll()
 {
     
@@ -56,6 +83,7 @@ function totalAll()
     {
         removeTotalpriceLine();
     }
+        total= (8*counterKruv)+(6*counterMel)+(4*counterTom)+(5*counterGam);
         let newPar = document.createElement("ul");
         newPar.setAttribute("class","finelprice");
         if (total <= 20)
@@ -78,18 +106,16 @@ function totalAll()
 function CleanAll()
 {
     let collection = document.getElementsByClassName('lineInBasket');
-   
-    console.log(collection);
     while (collection.length>0)
     {
         collection[collection.length-1].remove();
     }
     removeTotalpriceLine();
     total = 0;
-    counterKruv=1;
-    counterMel=1;
-    counterTom=1;
-    counterGam=1;
+    counterKruv=0;
+    counterMel=0;
+    counterTom=0;
+    counterGam=0;
 }
 function removeTotalpriceLine()
 {
