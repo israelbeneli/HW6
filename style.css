@@ -1,0 +1,21 @@
+.lineInBasket
+    {
+        width: 100%;
+  
+    }
+/* .totalPrice{
+    font-size: 15px;
+} */
+.basket{
+    text-align: center;
+}
+.finelprice{
+    font-size: 15px;
+}
+.allbasket{
+    margin: 30px;
+    width:35%;
+    text-align: center;
+    float:inline-end;
+    border: 1px solid black;
+}
